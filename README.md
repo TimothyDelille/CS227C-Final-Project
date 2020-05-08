@@ -15,54 +15,11 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(device)
 ```
 
-    cuda
-
-
 
 ```python
 train_set = datasets.MNIST(".", train=True, download=True)
 test_set = datasets.MNIST(".", train=False, download=True)
 ```
-
-    Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to ./MNIST/raw/train-images-idx3-ubyte.gz
-
-
-
-    HBox(children=(FloatProgress(value=1.0, bar_style='info', max=1.0), HTML(value='')))
-
-
-    Extracting ./MNIST/raw/train-images-idx3-ubyte.gz to ./MNIST/raw
-    Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to ./MNIST/raw/train-labels-idx1-ubyte.gz
-
-
-
-    HBox(children=(FloatProgress(value=1.0, bar_style='info', max=1.0), HTML(value='')))
-
-
-    Extracting ./MNIST/raw/train-labels-idx1-ubyte.gz to ./MNIST/raw
-    Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to ./MNIST/raw/t10k-images-idx3-ubyte.gz
-    
-
-
-
-    HBox(children=(FloatProgress(value=1.0, bar_style='info', max=1.0), HTML(value='')))
-
-
-    Extracting ./MNIST/raw/t10k-images-idx3-ubyte.gz to ./MNIST/raw
-    Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to ./MNIST/raw/t10k-labels-idx1-ubyte.gz
-
-
-
-    HBox(children=(FloatProgress(value=1.0, bar_style='info', max=1.0), HTML(value='')))
-
-
-    Extracting ./MNIST/raw/t10k-labels-idx1-ubyte.gz to ./MNIST/raw
-    Processing...
-    Done!
-
-
-    /pytorch/torch/csrc/utils/tensor_numpy.cpp:141: UserWarning: The given NumPy array is not writeable, and PyTorch does not support non-writeable tensors. This means you can write to the underlying (supposedly non-writeable) NumPy array using the tensor. You may want to copy the array to protect its data or make it writeable before converting it to a tensor. This type of warning will be suppressed for the rest of this program.
-
 
 
 ```python
@@ -256,131 +213,9 @@ results['global'] = admm(version = 'global')[0]
 ```
 
 
-    HBox(children=(FloatProgress(value=0.0, max=5.0), HTML(value='')))
-
-
-    Mean primal residual:7765.228515625
-    Dual residual:inf
-    Test set accuracy:0.0754
-    
-
-
-
-    HBox(children=(FloatProgress(value=0.0), HTML(value='')))
-
-
-    
-    Mean primal residual:653006.5625
-    Dual residual:739.7525634765625
-    Test set accuracy:0.8868
-    
-
-
-
-    HBox(children=(FloatProgress(value=0.0), HTML(value='')))
-
-
-    
-    Mean primal residual:101097.2265625
-    Dual residual:243.0607147216797
-    Test set accuracy:0.8988
-    
-
-
-
-    HBox(children=(FloatProgress(value=0.0), HTML(value='')))
-
-
-    
-    Mean primal residual:35552.31640625
-    Dual residual:154.50457763671875
-    Test set accuracy:0.9043
-    
-
-
-
-    HBox(children=(FloatProgress(value=0.0), HTML(value='')))
-
-
-    
-    Mean primal residual:26758.53125
-    Dual residual:119.68856048583984
-    Test set accuracy:0.9078
-    
-
-
-
-    HBox(children=(FloatProgress(value=0.0), HTML(value='')))
-
-
-    
-
-
-
 ```python
 results['general'] = admm(version = 'general')[0]
 ```
-
-
-    HBox(children=(FloatProgress(value=0.0, max=5.0), HTML(value='')))
-
-
-    Mean primal residual:5786.8203125
-    Dual residual:inf
-    Test set accuracy:0.1346
-    
-
-
-
-    HBox(children=(FloatProgress(value=0.0), HTML(value='')))
-
-
-    
-    Mean primal residual:436747.9375
-    Dual residual:967.6753540039062
-    Test set accuracy:0.8856
-    
-
-
-
-    HBox(children=(FloatProgress(value=0.0), HTML(value='')))
-
-
-    
-    Mean primal residual:61742.89453125
-    Dual residual:460.95947265625
-    Test set accuracy:0.8969
-    
-
-
-
-    HBox(children=(FloatProgress(value=0.0), HTML(value='')))
-
-
-    
-    Mean primal residual:19370.08203125
-    Dual residual:388.0677185058594
-    Test set accuracy:0.9037
-    
-
-
-
-    HBox(children=(FloatProgress(value=0.0), HTML(value='')))
-
-
-    
-    Mean primal residual:14092.09375
-    Dual residual:349.9862060546875
-    Test set accuracy:0.9086
-    
-
-
-
-    HBox(children=(FloatProgress(value=0.0), HTML(value='')))
-
-
-    
-
 
 
 ```python
@@ -410,10 +245,6 @@ def backtracking_line_search(alpha = 0.1, beta = 0.3, maxiter = 500):
 ```python
 results['line_search'] = backtracking_line_search()[0]
 ```
-
-
-    HBox(children=(FloatProgress(value=0.0, max=500.0), HTML(value='')))
-
 
 
 ```python
